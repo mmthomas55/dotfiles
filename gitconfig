@@ -1,0 +1,67 @@
+[format]
+    pretty = %Cblue%h%Creset %Cgreen[%ar]%Creset (%an) %s
+[color]
+    ui = true 
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[alias]
+    # Add
+    a = add
+    ia = add -p
+    st = status
+    co = checkout
+    fa = fetch --all
+    r = remote -v
+
+    # Commit
+    c = commit -m
+    amend = commit --amend
+
+    # Diffs
+    di = diff
+    dc = diff --cached
+    last = diff HEAD^
+
+    # Branches
+    b = branch -v
+    nb = checkout -b
+    cp = cherry-pick -x
+
+    # log
+    log = log --decorate --graph --date=short
+    l = log
+    changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
+    short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
+    changelog = log --pretty=format:\" * %s\"
+    shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
+
+    # Rebasing
+    rc = rebase --continue
+    rs = rebase --skip
+
+    # reset
+    unstage = reset HEAD              # remove files from index (tracking)
+    uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
+    filelog = log -u                  # show changes to a file
+
+    # Stash
+    ss = stash                        # stash changes
+    sl = stash list                   # list stashes
+    sa = stash apply                  # apply stash (restore changes)
+    sd = stash drop                   # drop stashes (destory changes)
+[apply]
+    whitespace = fix
+[core]
+    autocrlf = input
+    editor = vim
+    excludesfile = ~/.gitignore
+[user]
+	name = Masha Thomas
+	email = mmthomas55@gmail.com
