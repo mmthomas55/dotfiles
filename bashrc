@@ -274,6 +274,7 @@ fi
 
 # prompt
 PS1="\[$BLDBLK\]\n\u:\w \[$TXTBLU\](\$(srb_git_prompt)\[$TXTBLU\])\[$TXTRST\] \n→ "
+export PROMPT_COMMAND=’echo -ne “\033]0;${USER}@${HOSTNAME%%.*}\007″‘
 
 # vim: ts=4 sts=4 shiftwidth=4 expandtab
 
